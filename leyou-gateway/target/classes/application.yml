@@ -1,0 +1,19 @@
+server:
+  port: 10000
+spring:
+  application:
+    name: leyou-gateway
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://127.0.0.1:9000/eureka
+    registry-fetch-interval-seconds: 5
+zuul:
+  prefix: /api
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 7000
