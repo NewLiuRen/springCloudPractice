@@ -1,5 +1,5 @@
 server:
-  port: 10000
+  port: 7000
 spring:
   application:
     name: leyou-gateway
@@ -10,6 +10,9 @@ eureka:
     registry-fetch-interval-seconds: 5
 zuul:
   prefix: /api
+  routes:
+    leyou-service: /item/**
+  ignored-services: leyou-upload
 hystrix:
   command:
     default:
