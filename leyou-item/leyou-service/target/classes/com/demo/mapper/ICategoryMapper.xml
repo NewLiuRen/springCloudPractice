@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.ICategoryMapper">
+    <select id="findCategoriesByBrandId" parameterType="Long" resultType="Category">
+        SELECT
+            c.`id`, c.`name`, c.`parent_id`, c.`is_parent`, c.`sort`
+        FROM
+            `tb_category` AS c
+        LEFT JOIN
+            `tb_category_brand` AS cb
+        ON
+            c.`id` = cb.`category_id`
+        WHERE
+            cb.`brand_id` = #{bid};
+    </select>
+
+    <select id="findNamesByIds" parameterType="String" resultType="Category">
+        SELECT
+            c.`id`, c.`name`, c.`parent_id`, c.`is_parent`, c.`sort`
+        FROM
+            `tb_category` AS c
+        WHERE
+            c.`id` IN
+        <foreach collection="ids" open="(" separator="," close=")" item="id">
+            #{id}
+        </foreach>
+    </select>
+</mapper>

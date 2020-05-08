@@ -3,7 +3,6 @@ package com.demo.controller;
 import com.demo.common.pojo.PageResult;
 import com.demo.pojo.Brand;
 import com.demo.service.IBrandService;
-import com.demo.service.impl.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,9 +41,28 @@ public class BrandController {
         return ResponseEntity.ok(brandPageResult);
     }
 
+    @GetMapping("cid/{cid}")
+    public ResponseEntity<List<Brand>> findBrandsByCid(@PathVariable("cid") Long cid) {
+        if (cid == null || cid.longValue() < 0) return ResponseEntity.badRequest().build();
+        List<Brand> brands = this.brandService.findBrandsByCid(cid);
+        return ResponseEntity.ok(brands);
+    }
+
     @PostMapping
-    public ResponseEntity<Void> addBrand(Brand brand, @RequestParam("cids")List<Long>cids) {
+    public ResponseEntity<Void> addBrand(Brand brand, @RequestParam("cids") List<Long> cids) {
         this.brandService.addBrand(brand, cids);
         return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+    @PutMapping
+    public ResponseEntity<Void> updateBrand(Brand brand, @RequestParam("cids") List<Long> cids) {
+        this.brandService.updateBrand(brand, cids);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
+    @DeleteMapping("bid/{bid}")
+    public ResponseEntity<Void> deleteBrand(@PathVariable("bid") Long bid) {
+        this.brandService.deleteBrand(bid);
+        return ResponseEntity.noContent().build();
     }
 }

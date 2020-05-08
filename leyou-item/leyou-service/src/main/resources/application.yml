@@ -13,5 +13,5 @@ spring:
   profiles:
     include: datasource
 mybatis:
-  type-aliases-package: com.demo.interface.pojo
+  type-aliases-package: com.demo.pojo
   mapper-locations: classpath:com/demo/mapper/*Mapper.xml

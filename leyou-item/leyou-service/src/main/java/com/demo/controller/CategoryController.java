@@ -24,7 +24,18 @@ public class CategoryController {
         if (pid == null || pid.longValue() < 0) return ResponseEntity.badRequest().build();
 
         List<Category> categories = categoryService.findCategoriesByPid(pid);
-        System.out.println(categories);
+
+        if (CollectionUtils.isEmpty(categories)) return ResponseEntity.noContent().build();
+
+        return ResponseEntity.ok(categories);
+    }
+
+    @GetMapping("bid/{bid}")
+    public ResponseEntity<List<Category>> findCategoriesByBrandId(@PathVariable("bid") Long bid) {
+        if (bid == null || bid.longValue() < 0) return ResponseEntity.badRequest().build();
+
+        List<Category> categories = categoryService.findCategoriesByBrandId(bid);
+
         if (CollectionUtils.isEmpty(categories)) return ResponseEntity.noContent().build();
 
         return ResponseEntity.ok(categories);

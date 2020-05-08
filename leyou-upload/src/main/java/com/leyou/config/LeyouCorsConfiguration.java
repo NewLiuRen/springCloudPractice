@@ -14,6 +14,7 @@ public class LeyouCorsConfiguration {
         CorsConfiguration config = new CorsConfiguration();
         //1) 允许的域,不要写*，否则cookie就无法使用了
         config.addAllowedOrigin("http://192.168.40.165:9001");
+        config.addAllowedOrigin("http://manage.leyou.com");
         //3) 允许的请求方式
         config.addAllowedMethod("OPTIONS");
         config.addAllowedMethod("POST");

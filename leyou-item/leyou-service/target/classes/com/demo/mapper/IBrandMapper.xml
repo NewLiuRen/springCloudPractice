@@ -4,7 +4,22 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.demo.mapper.IBrandMapper">
+    <select id="findBrandsByCid" parameterType="Long" resultType="Brand">
+        SELECT
+            b.`id`, b.`name`, b.`image`, b.`letter`
+        FROM
+            tb_brand as b,
+            tb_category_brand as cb
+        WHERE
+            cb.`brand_id` = b.`id`
+            AND cb.`category_id` = #{cid};
+    </select>
+
     <insert id="saveCategoryAndBrand">
         INSERT INTO tb_category_brand(category_id, brand_id) VALUES (#{cid}, #{bid});
     </insert>
+
+    <delete id="deleteCategoryAndBrandByBrandId">
+        DELETE FROM tb_category_brand WHERE brand_id=#{bid};
+    </delete>
 </mapper>

@@ -1,15 +1,18 @@
+server:
+  port: 12000
 spring:
   application:
     name: leyou-upload
   servlet:
     multipart:
       max-file-size: 5MB
-server:
-  port: 6000
 eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:9000/eureka/
+    instance:
+      lease-renewal-interval-in-seconds: 5 # 5秒钟发送一次心跳
+      lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期
   instance:
     lease-renewal-interval-in-seconds: 5 # 每隔5秒发送一次心跳
     lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期

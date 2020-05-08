@@ -41,6 +41,7 @@ public class UploadService implements IUploadService {
 
             file.transferTo(new File("E:\\IDEAProject\\leyou\\images\\" + originalFilename));
 
+            return "http://image.leyou.com/" + originalFilename;
         } catch (IOException e) {
             e.printStackTrace();
         }
