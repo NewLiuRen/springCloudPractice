@@ -1,72 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e8aad2f-7344-48f6-b094-c36af78d91d1" name="Default Changelist" comment="feat: 添加商品管理的其他功能">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/1524297314398.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/1524297401034.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/1524297522736.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/1524297577945.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/1524297601837.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/1524297613631.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/1524297678762.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/1524297700419.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/731.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Haier.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/nike.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-interface/src/main/java/com/demo/bo/SpuBO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-interface/src/main/java/com/demo/pojo/Sku.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-interface/src/main/java/com/demo/pojo/SpecGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-interface/src/main/java/com/demo/pojo/SpecParam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-interface/src/main/java/com/demo/pojo/Spu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-interface/src/main/java/com/demo/pojo/SpuDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-interface/src/main/java/com/demo/pojo/Stock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-interface/target/classes/META-INF/leyouinterface.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/controller/GoodsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/controller/SpecController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/mapper/ISkuMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/mapper/ISpecGroupMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/mapper/ISpecParamMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/mapper/ISpuDetailMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/mapper/ISpuMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/mapper/IStockMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/IGoodsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/ISpecService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/impl/BrandServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/impl/CategoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/impl/GoodsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/impl/SpecServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/resources/com/demo/mapper/ICategoryMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/resources/com/demo/mapper/IStockMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-service/target/classes/META-INF/leyouservice.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-service/target/classes/com/demo/mapper/ICategoryMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-service/target/classes/com/demo/mapper/IStockMapper.xml" afterDir="false" />
+    <list default="true" id="9e8aad2f-7344-48f6-b094-c36af78d91d1" name="Default Changelist" comment="feat: 添加前台商品搜索功能">
+      <change afterPath="$PROJECT_DIR$/leyou-goods-web/leyou-goods-web.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-interface/src/main/java/com/demo/api/BrandApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-interface/src/main/java/com/demo/api/CategoryApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-interface/src/main/java/com/demo/api/GoodsApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leyou-item/leyou-interface/src/main/java/com/demo/api/SpecApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leyou-search/leyou-search.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/test.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/leyou-gateway/src/main/java/com/leyou/LeyouGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-gateway/src/main/java/com/leyou/LeyouGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/LeyouServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/LeyouServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leyou-common/src/main/java/com/demo/common/pojo/PageResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-common/src/main/java/com/demo/common/pojo/PageResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leyou-gateway/src/main/java/com/leyou/config/LeyouCorsConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-gateway/src/main/java/com/leyou/config/LeyouCorsConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leyou-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leyou-gateway/target/classes/META-INF/leyougateway.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leyou-gateway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-gateway/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-interface/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-item/leyou-interface/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-interface/target/classes/META-INF/leyouinterface.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/controller/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/controller/BrandController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/mapper/IBrandMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/mapper/IBrandMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/mapper/ICategoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/mapper/ICategoryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/controller/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/controller/SpecController.java" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/controller/SpecController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/IBrandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/IBrandService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/ICategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/ICategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/impl/BrandService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/impl/CategoryService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/resources/com/demo/mapper/IBrandMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/resources/com/demo/mapper/IBrandMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-item/leyou-service/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/target/classes/com/demo/mapper/IBrandMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-item/leyou-service/target/classes/com/demo/mapper/IBrandMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leyou-upload/src/main/java/com/leyou/config/LeyouCorsConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-upload/src/main/java/com/leyou/config/LeyouCorsConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leyou-upload/src/main/java/com/leyou/service/impl/UploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-upload/src/main/java/com/leyou/service/impl/UploadService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leyou-upload/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-upload/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leyou-upload/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-upload/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/IGoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/IGoodsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/ISpecService.java" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/ISpecService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/impl/BrandServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/impl/BrandServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/impl/GoodsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/impl/SpecServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/leyou-item/leyou-service/src/main/java/com/demo/service/impl/SpecServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leyou-item/leyou-service/target/classes/META-INF/leyouservice.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/leyou-upload/target/classes/META-INF/leyou-upload.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -89,9 +62,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Class" />
-        <option value="Interface" />
         <option value="mybatis-mapper.xml" />
+        <option value="Interface" />
+        <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -100,6 +74,9 @@
   </component>
   <component name="ProjectId" id="1ZL70Z3FVW2jQ8mQIw4XCErGFf5" />
   <component name="PropertiesComponent">
+    <property name="MyBatisLogPluginparameters" value="Parameters:" />
+    <property name="MyBatisLogPluginpreparing" value="Preparing:" />
+    <property name="MyBatisLogPluginrunning" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -107,16 +84,31 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/.m2/repository/org/springframework/boot/spring-boot/2.2.5.RELEASE/spring-boot-2.2.5.RELEASE.jar!/" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/leyou-search/src/main/java/com/demo/client" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.demo.client" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.demo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\IDEAProject\leyou\leyou-search\src\main\java\com\demo\client" />
+      <recent name="E:\IDEAProject\leyou\leyou-item\leyou-interface\src\main\java\com\demo\api" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.demo.service" />
     </key>
@@ -138,7 +130,55 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UploadApplication">
+  <component name="RunManager" selected="JUnit.CategoryClientTest.testImportGoodsData">
+    <configuration name="CategoryClientTest.testApi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="leyou-search" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.demo.client" />
+      <option name="MAIN_CLASS_NAME" value="com.demo.client.CategoryClientTest" />
+      <option name="METHOD_NAME" value="testApi" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategoryClientTest.testImportGoodsData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="leyou-search" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.demo.client" />
+      <option name="MAIN_CLASS_NAME" value="com.demo.client.CategoryClientTest" />
+      <option name="METHOD_NAME" value="testImportGoodsData" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ElasticSearchTest.testCreateIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="leyou-search" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.demo.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.demo.client" />
+      <option name="MAIN_CLASS_NAME" value="com.demo.client.ElasticSearchTest" />
+      <option name="METHOD_NAME" value="testCreateIndex" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LeyouGateway" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="leyou-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.leyou.LeyouGateway" />
@@ -149,6 +189,13 @@
     <configuration name="LeyouRegistry" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="leyou-registry" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.leyou.LeyouRegistry" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LeyouSearchService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="leyou-search" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.LeyouSearchService" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -183,23 +230,26 @@
       <list>
         <item itemvalue="Spring Boot.LeyouServiceApplication" />
         <item itemvalue="Spring Boot.UploadApplication" />
+        <item itemvalue="JUnit.CategoryClientTest.testImportGoodsData" />
+        <item itemvalue="JUnit.ElasticSearchTest.testCreateIndex" />
+        <item itemvalue="JUnit.CategoryClientTest.testApi" />
       </list>
     </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
       <serviceView>
-        <option name="contentProportion" value="0.16151468" />
+        <option name="contentProportion" value="0.17387944" />
         <treeState>
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@9494b6bf" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@bccd23d3" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@9494b6bf" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@6f5a6866" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@bccd23d3" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5255e4c1" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -239,8 +289,24 @@
       <workItem from="1588745096315" duration="3414000" />
       <workItem from="1588811922267" duration="1339000" />
       <workItem from="1588815057982" duration="26327000" />
-      <workItem from="1588898221349" duration="12673000" />
+      <workItem from="1588898221349" duration="15145000" />
+      <workItem from="1589526205821" duration="635000" />
+      <workItem from="1590059042108" duration="5798000" />
+      <workItem from="1590107509287" duration="2793000" />
+      <workItem from="1590128737915" duration="327000" />
+      <workItem from="1590717123592" duration="58722000" />
+      <workItem from="1591058915473" duration="17500000" />
+      <workItem from="1591230830637" duration="15731000" />
+      <workItem from="1591576552741" duration="28486000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: 添加商品管理的其他功能">
+      <created>1588927008584</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588927008584</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +327,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: 添加商品管理的其他功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 添加商品管理的其他功能" />
+    <MESSAGE value="feat: 添加前台商品搜索功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 添加前台商品搜索功能" />
   </component>
 </project>

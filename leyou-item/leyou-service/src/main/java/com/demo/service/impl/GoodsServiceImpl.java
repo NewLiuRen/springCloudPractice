@@ -22,18 +22,22 @@ import java.util.stream.Collectors;
 
 @Service
 public class GoodsServiceImpl implements IGoodsService {
+    private final ISpuMapper spuMapper;
+    private final ISpuDetailMapper spuDetailMapper;
+    private final ISkuMapper skuMapper;
+    private final IStockMapper stockMapper;
+    private final IBrandMapper brandMapper;
+    private final ICategoryMapper categoryMapper;
+
     @Autowired
-    private ISpuMapper spuMapper;
-    @Autowired
-    private ISpuDetailMapper spuDetailMapper;
-    @Autowired
-    private ISkuMapper skuMapper;
-    @Autowired
-    private IStockMapper stockMapper;
-    @Autowired
-    private IBrandMapper brandMapper;
-    @Autowired
-    private ICategoryMapper categoryMapper;
+    public GoodsServiceImpl(ISpuMapper spuMapper, ISpuDetailMapper spuDetailMapper, ISkuMapper skuMapper, IStockMapper stockMapper, IBrandMapper brandMapper, ICategoryMapper categoryMapper) {
+        this.spuMapper = spuMapper;
+        this.spuDetailMapper = spuDetailMapper;
+        this.skuMapper = skuMapper;
+        this.stockMapper = stockMapper;
+        this.brandMapper = brandMapper;
+        this.categoryMapper = categoryMapper;
+    }
 
     @Override
     public PageResult<SpuBO> findByPage(String key, Boolean saleable, Integer page, Integer rows) {
@@ -63,7 +67,7 @@ public class GoodsServiceImpl implements IGoodsService {
             spuBOList.add(spuBO);
         });
 
-        return new PageResult<SpuBO>(pageInfo.getTotal(), spuBOList);
+        return new PageResult<>(pageInfo.getTotal(), spuBOList);
     }
 
     @Override
@@ -136,7 +140,7 @@ public class GoodsServiceImpl implements IGoodsService {
         this.saveSkuAndStock(spuBO);
     }
 
-    public void saveSkuAndStock(SpuBO spuBO) {
+    private void saveSkuAndStock(SpuBO spuBO) {
         Date date = new Date();
         spuBO.getSkus().forEach(sku -> {
             sku.setCreateTime(date);
@@ -152,12 +156,29 @@ public class GoodsServiceImpl implements IGoodsService {
     }
 
     @Override
-    public void updateGoodsValid(SpuBO spuBO) {
-
+    public void updateGoodsValid(Long spuId) {
+        Spu spu = new Spu();
+        spu.setId(spuId);
+        spu.setValid(false);
+        spu.setLastUpdateTime(new Date());
+        this.spuMapper.updateByPrimaryKeySelective(spu);
     }
 
     @Override
-    public void updateGoodsSaleable(SpuBO spuBO) {
+    public void updateGoodsSaleable(Long spuId) {
+        Spu spu = new Spu();
+        spu.setId(spuId);
+        spu.setSaleable(false);
+        spu.setLastUpdateTime(new Date());
+        this.spuMapper.updateByPrimaryKeySelective(spu);
+    }
 
+    @Override
+    public void updateGoodsUnsaleable(Long spuId) {
+        Spu spu = new Spu();
+        spu.setId(spuId);
+        spu.setSaleable(true);
+        spu.setLastUpdateTime(new Date());
+        this.spuMapper.updateByPrimaryKeySelective(spu);
     }
 }

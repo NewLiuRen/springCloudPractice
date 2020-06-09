@@ -5,7 +5,6 @@ import com.demo.common.pojo.PageResult;
 import com.demo.pojo.Sku;
 import com.demo.pojo.SpuDetail;
 import com.demo.service.IGoodsService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -17,8 +16,11 @@ import java.util.List;
 @Controller
 @RequestMapping
 public class GoodsController {
-    @Autowired
-    private IGoodsService goodsService;
+    private final IGoodsService goodsService;
+
+    public GoodsController(IGoodsService goodsService) {
+        this.goodsService = goodsService;
+    }
 
     // String key, Boolean saleable, Integer page, Integer rows
     @GetMapping("spu/page")
@@ -35,7 +37,7 @@ public class GoodsController {
 
     @GetMapping("spu/detail/{id}")
     public ResponseEntity<SpuDetail> findSpuBOById(@PathVariable("id") Long id) {
-        if (id == null || id.longValue() < 0) return ResponseEntity.badRequest().build();
+        if (id == null || id < 0) return ResponseEntity.badRequest().build();
 
         SpuDetail spuDetail = this.goodsService.findSpuBySpuId(id);
         if (spuDetail == null) return ResponseEntity.noContent().build();
@@ -44,7 +46,7 @@ public class GoodsController {
 
     @GetMapping("sku/list/{id}")
     public ResponseEntity<List<Sku>> findSkuListBySpuId(@PathVariable("id") Long id) {
-        if (id == null || id.longValue() < 0) return ResponseEntity.badRequest().build();
+        if (id == null || id < 0) return ResponseEntity.badRequest().build();
 
         List<Sku> skus = this.goodsService.findSkusBySpuId(id);
         if (CollectionUtils.isEmpty(skus)) return ResponseEntity.noContent().build();
@@ -71,5 +73,23 @@ public class GoodsController {
     public ResponseEntity<Void> updateGoods(@RequestBody SpuBO spuBO) {
         this.goodsService.updateGoods(spuBO);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    @PutMapping("goods/valid/{id}")
+    public ResponseEntity<Void> deleteGoods(@PathVariable("id") Long id) {
+        this.goodsService.updateGoodsValid(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("goods/saleable/{id}")
+    public ResponseEntity<Void> saleableGoods(@PathVariable("id") Long id) {
+        this.goodsService.updateGoodsSaleable(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("goods/unsaleable/{id}")
+    public ResponseEntity<Void> unsaleableGoods(@PathVariable("id") Long id) {
+        this.goodsService.updateGoodsUnsaleable(id);
+        return ResponseEntity.noContent().build();
     }
 }

@@ -12,6 +12,7 @@ zuul:
   prefix: /api
   routes:
     leyou-service: /item/**
+    search-service: /search/**
   ignored-services: leyou-upload
 hystrix:
   command:

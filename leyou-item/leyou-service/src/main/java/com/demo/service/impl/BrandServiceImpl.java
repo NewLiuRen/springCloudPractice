@@ -7,7 +7,6 @@ import com.demo.service.IBrandService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
@@ -15,8 +14,11 @@ import java.util.List;
 
 @Service
 public class BrandServiceImpl implements IBrandService {
-    @Autowired
-    private IBrandMapper brandMapper;
+    private final IBrandMapper brandMapper;
+
+    public BrandServiceImpl(IBrandMapper brandMapper) {
+        this.brandMapper = brandMapper;
+    }
 
     @Override
     public PageResult<Brand> findBrandsByPage(String key, Integer page, Integer rows, String sortBy, Boolean desc) {
@@ -32,11 +34,11 @@ public class BrandServiceImpl implements IBrandService {
         List<Brand> brands = this.brandMapper.selectByExample(example);
         PageInfo<Brand> pageInfo = new PageInfo<>(brands);
 
-        return new PageResult<Brand>(pageInfo.getTotal(), brands);
+        return new PageResult<>(pageInfo.getTotal(), brands);
     }
 
     @Override
-    public Brand findBrandById(Integer bid) {
+    public Brand findBrandById(Long bid) {
         return this.brandMapper.selectByPrimaryKey(bid);
     }
 
@@ -49,9 +51,7 @@ public class BrandServiceImpl implements IBrandService {
     public void addBrand(Brand brand, List<Long> cids) {
         this.brandMapper.insertSelective(brand);
 
-        cids.stream().forEach(cid -> {
-            this.brandMapper.saveCategoryAndBrand(cid, brand.getId());
-        });
+        cids.forEach(cid -> this.brandMapper.saveCategoryAndBrand(cid, brand.getId()));
     }
 
     @Override

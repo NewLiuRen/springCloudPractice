@@ -7,19 +7,27 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="leyouinterface" />
+        <module name="leyou-goods-web" />
         <module name="leyou-gateway" />
-        <module name="leyou-registry" />
-        <module name="leyouservice" />
-        <module name="leyou-common" />
         <module name="leyou-upload" />
+        <module name="leyouservice" />
+        <module name="leyou-registry" />
+        <module name="leyou-search" />
+        <module name="leyou-common" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="elasticsearchdemo" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="elasticsearchdemo" options="-parameters" />
       <module name="leyou-common" options="-parameters" />
       <module name="leyou-gateway" options="-parameters" />
+      <module name="leyou-goods-web" options="-parameters" />
       <module name="leyou-registry" options="-parameters" />
+      <module name="leyou-search" options="-parameters" />
       <module name="leyou-upload" options="-parameters" />
       <module name="leyouinterface" options="-parameters" />
       <module name="leyouservice" options="-parameters" />

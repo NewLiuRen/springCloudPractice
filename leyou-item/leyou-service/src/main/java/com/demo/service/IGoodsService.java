@@ -3,7 +3,6 @@ package com.demo.service;
 import com.demo.bo.SpuBO;
 import com.demo.common.pojo.PageResult;
 import com.demo.pojo.Sku;
-import com.demo.pojo.Spu;
 import com.demo.pojo.SpuDetail;
 
 import java.util.List;
@@ -19,7 +18,11 @@ public interface IGoodsService {
 
     void updateGoods(SpuBO spuBO);
     
-    void updateGoodsValid(SpuBO spuBO);
-    
-    void updateGoodsSaleable(SpuBO spuBO);
+    void updateGoodsValid(Long spuId);
+
+    // 下架
+    void updateGoodsSaleable(Long spuId);
+
+    // 上架
+    void updateGoodsUnsaleable(Long spuId);
 }

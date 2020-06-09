@@ -3,7 +3,6 @@ package com.demo.controller;
 import com.demo.common.pojo.PageResult;
 import com.demo.pojo.Brand;
 import com.demo.service.IBrandService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.CollectionUtils;
@@ -14,18 +13,13 @@ import java.util.List;
 @RestController
 @RequestMapping("brand")
 public class BrandController {
-    @Autowired
-    private IBrandService brandService;
+    private final IBrandService brandService;
 
-    /**
-     * 分页获取品牌列表
-     * @param key 搜索条件
-     * @param page 当前页
-     * @param rows 每页行数
-     * @param sortBy 排序字段
-     * @param desc 是否降序
-     * @return
-     */
+    public BrandController(IBrandService brandService) {
+        this.brandService = brandService;
+    }
+
+    // 分页获取品牌列表
     @GetMapping
     public ResponseEntity<PageResult<Brand>> findBrandsByPage(
             @RequestParam(value = "key", required = false) String key,
@@ -41,9 +35,16 @@ public class BrandController {
         return ResponseEntity.ok(brandPageResult);
     }
 
+    @GetMapping("bid/{bid}")
+    public ResponseEntity<Brand> findBrandById(@PathVariable("bid") Long bid) {
+        if (bid == null || bid < 0) return ResponseEntity.badRequest().build();
+        Brand brand = this.brandService.findBrandById(bid);
+        return ResponseEntity.ok(brand);
+    }
+
     @GetMapping("cid/{cid}")
     public ResponseEntity<List<Brand>> findBrandsByCid(@PathVariable("cid") Long cid) {
-        if (cid == null || cid.longValue() < 0) return ResponseEntity.badRequest().build();
+        if (cid == null || cid < 0) return ResponseEntity.badRequest().build();
         List<Brand> brands = this.brandService.findBrandsByCid(cid);
         return ResponseEntity.ok(brands);
     }

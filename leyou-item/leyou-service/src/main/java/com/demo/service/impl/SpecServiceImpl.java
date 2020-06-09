@@ -5,17 +5,29 @@ import com.demo.mapper.ISpecParamMapper;
 import com.demo.pojo.SpecGroup;
 import com.demo.pojo.SpecParam;
 import com.demo.service.ISpecService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class SpecServiceImpl implements ISpecService {
-    @Autowired
-    private ISpecGroupMapper specGroupMapper;
-    @Autowired
-    private ISpecParamMapper specParamMapper;
+    private final ISpecGroupMapper specGroupMapper;
+    private final ISpecParamMapper specParamMapper;
+
+    public SpecServiceImpl(ISpecGroupMapper specGroupMapper, ISpecParamMapper specParamMapper) {
+        this.specGroupMapper = specGroupMapper;
+        this.specParamMapper = specParamMapper;
+    }
+
+    @Override
+    public List<SpecParam> findParams(Long gid, Long cid, Boolean generic, Boolean searching) {
+        SpecParam specParam = new SpecParam();
+        specParam.setGroupId(gid);
+        specParam.setCid(cid);
+        specParam.setGeneric(generic);
+        specParam.setSearching(searching);
+        return this.specParamMapper.select(specParam);
+    }
 
     @Override
     public List<SpecGroup> findSpecGroupsByCid(Long cid) {
@@ -65,6 +77,6 @@ public class SpecServiceImpl implements ISpecService {
 
     @Override
     public void deleteSpecParam(Long id) {
-        this.deleteSpecParam(id);
+        this.specParamMapper.deleteByPrimaryKey(id);
     }
 }
