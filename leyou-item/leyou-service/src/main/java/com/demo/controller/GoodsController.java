@@ -3,6 +3,7 @@ package com.demo.controller;
 import com.demo.bo.SpuBO;
 import com.demo.common.pojo.PageResult;
 import com.demo.pojo.Sku;
+import com.demo.pojo.Spu;
 import com.demo.pojo.SpuDetail;
 import com.demo.service.IGoodsService;
 import org.springframework.http.HttpStatus;
@@ -33,6 +34,15 @@ public class GoodsController {
         PageResult<SpuBO> result = this.goodsService.findByPage(key, saleable, page, rows);
         if (CollectionUtils.isEmpty(result.getItems())) ResponseEntity.noContent().build();
         return ResponseEntity.ok(result);
+    }
+
+    @GetMapping("spu/{id}")
+    public ResponseEntity<Spu> findSpuById(@PathVariable("id") Long id) {
+        if (id == null || id < 0) return ResponseEntity.badRequest().build();
+
+        Spu spu = this.goodsService.findSpuById(id);
+        if (spu == null) return ResponseEntity.noContent().build();
+        return ResponseEntity.ok(spu);
     }
 
     @GetMapping("spu/detail/{id}")

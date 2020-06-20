@@ -3,6 +3,7 @@ package com.demo.api;
 import com.demo.bo.SpuBO;
 import com.demo.common.pojo.PageResult;
 import com.demo.pojo.Sku;
+import com.demo.pojo.Spu;
 import com.demo.pojo.SpuDetail;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,9 @@ public interface GoodsApi {
             @RequestParam(defaultValue = "1") Integer page,
             @RequestParam(defaultValue = "5") Integer rows
     );
+
+    @GetMapping("spu/{id}")
+    Spu findSpuById(@PathVariable("id") Long id);
 
     @GetMapping("spu/detail/{id}")
     SpuDetail findSpuBOById(@PathVariable("id") Long id);

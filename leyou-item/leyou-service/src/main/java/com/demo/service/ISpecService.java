@@ -25,4 +25,6 @@ public interface ISpecService {
     void deleteSpecParam(Long id);
 
     List<SpecParam> findParams(Long gid, Long cid, Boolean generic, Boolean searching);
+
+    List<SpecGroup> findSpecGroupsWithParamByCid(Long cid);
 }

@@ -3,6 +3,7 @@ package com.demo.service;
 import com.demo.bo.SpuBO;
 import com.demo.common.pojo.PageResult;
 import com.demo.pojo.Sku;
+import com.demo.pojo.Spu;
 import com.demo.pojo.SpuDetail;
 
 import java.util.List;
@@ -25,4 +26,6 @@ public interface IGoodsService {
 
     // 上架
     void updateGoodsUnsaleable(Long spuId);
+
+    Spu findSpuById(Long id);
 }

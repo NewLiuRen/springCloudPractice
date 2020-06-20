@@ -79,4 +79,14 @@ public class SpecServiceImpl implements ISpecService {
     public void deleteSpecParam(Long id) {
         this.specParamMapper.deleteByPrimaryKey(id);
     }
+
+    @Override
+    public List<SpecGroup> findSpecGroupsWithParamByCid(Long cid) {
+        List<SpecGroup> groups = this.findSpecGroupsByCid(cid);
+        groups.forEach(group -> {
+            List<SpecParam> params = this.findSpecParamsByGid(group.getId());
+            group.setParams(params);
+        });
+        return groups;
+    }
 }

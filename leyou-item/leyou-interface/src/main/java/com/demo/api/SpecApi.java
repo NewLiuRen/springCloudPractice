@@ -44,4 +44,7 @@ public interface SpecApi {
 
     @DeleteMapping("param/{id}")
     Void deleteSpecParam(@PathVariable Long id);
+
+    @GetMapping("groups/params/{cid}")
+    public List<SpecGroup> findSpecWithParamByCid(@PathVariable("cid") Long cid);
 }

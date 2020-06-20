@@ -12,6 +12,14 @@ spring:
     name: leyou-service
   profiles:
     include: datasource
+  rabbitmq:
+    host: 192.168.224.129
+    username: leyou
+    password: leyou
+    virtual-host: /leyou
+    template:
+      exchange: leyou.item.exchange
+    publisher-confirms: true
 mybatis:
   type-aliases-package: com.demo.pojo
   mapper-locations: classpath:com/demo/mapper/*Mapper.xml

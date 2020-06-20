@@ -8,6 +8,8 @@ import com.demo.service.IGoodsService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.amqp.AmqpException;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,6 +31,13 @@ public class GoodsServiceImpl implements IGoodsService {
     private final IBrandMapper brandMapper;
     private final ICategoryMapper categoryMapper;
 
+    private AmqpTemplate amqpTemplate;
+
+    @Autowired
+    public void setAmqpTemplate(AmqpTemplate amqpTemplate) {
+        this.amqpTemplate = amqpTemplate;
+    }
+
     @Autowired
     public GoodsServiceImpl(ISpuMapper spuMapper, ISpuDetailMapper spuDetailMapper, ISkuMapper skuMapper, IStockMapper stockMapper, IBrandMapper brandMapper, ICategoryMapper categoryMapper) {
         this.spuMapper = spuMapper;
@@ -37,6 +46,15 @@ public class GoodsServiceImpl implements IGoodsService {
         this.stockMapper = stockMapper;
         this.brandMapper = brandMapper;
         this.categoryMapper = categoryMapper;
+    }
+
+    // 发送消息
+    private void sendMsg(Long id, String type) {
+        try {
+            this.amqpTemplate.convertAndSend("item." + type, id);
+        } catch (AmqpException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -86,7 +104,14 @@ public class GoodsServiceImpl implements IGoodsService {
         spuDetail.setSpuId(spuBO.getId());
         this.spuDetailMapper.insertSelective(spuDetail);
 
+        this.sendMsg(spuBO.getId(), "insert");
+
         this.saveSkuAndStock(spuBO);
+    }
+
+    @Override
+    public Spu findSpuById(Long id) {
+        return this.spuMapper.selectByPrimaryKey(id);
     }
 
     @Override
@@ -135,6 +160,8 @@ public class GoodsServiceImpl implements IGoodsService {
 
         // 更新spuDetail
         this.spuDetailMapper.updateByPrimaryKeySelective(spuBO.getSpuDetail());
+
+        this.sendMsg(spuBO.getId(), "update");
 
         // 新建sku及库存
         this.saveSkuAndStock(spuBO);

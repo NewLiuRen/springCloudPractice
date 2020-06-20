@@ -42,6 +42,14 @@ public class SpecController {
         return ResponseEntity.ok(groups);
     }
 
+    @GetMapping("groups/params/{cid}")
+    public ResponseEntity<List<SpecGroup>> findSpecWithParamByCid(@PathVariable("cid") Long cid) {
+        if (cid == null || cid < 0) return ResponseEntity.badRequest().build();
+        List<SpecGroup> groups = this.specService.findSpecGroupsWithParamByCid(cid);
+        if (CollectionUtils.isEmpty(groups)) return ResponseEntity.noContent().build();
+        return ResponseEntity.ok(groups);
+    }
+
     @PostMapping("group")
     public ResponseEntity<Void> addSpecGroup(@RequestBody SpecGroup group) {
         if (group == null) return ResponseEntity.badRequest().build();
