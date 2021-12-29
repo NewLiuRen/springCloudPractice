@@ -1,0 +1,15 @@
+server:
+  port: 15000
+spring:
+  application:
+    name: user-service
+  profiles:
+    include: datasource
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9000/eureka
+    registry-fetch-interval-seconds: 10
+mybatis:
+  type-aliases-package: com.demo.pojo
+  mapper-locations: classpath:com/demo/mapper/*Mapper.xml

@@ -1,0 +1,28 @@
+server:
+  port: 6000
+spring:
+  jackson:
+    default-property-inclusion: non_null # 配置json处理时忽略空值
+  application:
+    name: search-service
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+#      client:
+#        reactive:
+#          endpoints: 192.168.224.129:9300
+      cluster-name: elasticsearch
+      cluster-nodes: 192.168.224.129:9300
+  main:
+    allow-bean-definition-overriding: true
+  rabbitmq:
+    host: 192.168.224.129
+    username: leyou
+    password: leyou
+    virtual-host: /leyou
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9000/eureka
+
